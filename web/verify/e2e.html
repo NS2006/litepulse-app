@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LitePulse end-to-end check</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { background: #0b0d10; color: #fff; font: 14px/1.5 ui-monospace, Consolas, monospace; margin: 16px; }
+    canvas { max-width: 240px; display: block; margin-bottom: 12px; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <!--
+    Runs the page's real pipeline (MediaPipe web, ROI extraction, inference
+    worker with ONNX Runtime Web, HR maths) on a still face image with a
+    synthetic pulse at known heart rates. No camera needed.
+
+      e2e.html?img=tmp/face.png&bpm=60,75,90,110&seconds=12
+  -->
+  <canvas id="frame"></canvas>
+  <pre id="log">starting…</pre>
+  <script type="module" src="e2e.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Local tools and scratch folders
+.claude/
+apk-inspect/
+.DS_Store
+Thumbs.db
+
+# Built APKs go on GitHub Releases, not in the repository
+*.apk
+
+# Model export outputs (the copies in use live in android/app/src/main/assets and web/models)
+model/litepulse.ptl
+model/litepulse.onnx
+__pycache__/
+*.pyc

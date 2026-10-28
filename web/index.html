@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LitePulse — Detak Jantung dari Wajah</title>
+  <meta name="description" content="Ukur detak jantung dari video wajah langsung di browser dengan model rPPG LitePulse (0,4 MB). Tanpa instalasi, video tidak diunggah.">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 17h7l3-8 5 15 4-11 2 4h7' fill='none' stroke='%234FC3F7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M2 17h7l3-8 5 15 4-11 2 4h7" />
+      </svg>
+      <span class="brand-name">LitePulse</span>
+    </header>
+
+    <!-- Intro -->
+    <section id="intro" class="intro">
+      <h1>Ukur detak jantung dari wajah, langsung di browser</h1>
+      <p class="lead">
+        Model rPPG ringan (0,4 MB) membaca perubahan warna kulit yang sangat kecil
+        di dahi dan pipi untuk memperkirakan detak jantung. Tanpa instalasi.
+      </p>
+
+      <button id="start" class="btn-primary" type="button">Mulai Pengukuran</button>
+      <p id="load-status" class="load-status" role="status" aria-live="polite"></p>
+
+      <ul class="tips">
+        <li><strong>Cahaya terang dan merata</strong> di wajah, hindari lampu dari belakang.</li>
+        <li><strong>Wajah di tengah</strong> layar, dahi tidak tertutup rambut.</li>
+        <li><strong>Diam dan jangan berbicara</strong> sekitar 10 detik.</li>
+      </ul>
+
+      <p class="privacy">Video wajah diproses di perangkat Anda dan tidak diunggah.</p>
+    </section>
+
+    <!-- Measurement -->
+    <section id="measure" class="measure" hidden>
+      <div class="camera">
+        <video id="video" playsinline muted autoplay></video>
+        <canvas id="overlay" class="overlay" aria-hidden="true"></canvas>
+
+        <div id="status" class="status-card" role="status" aria-live="polite">
+          <p id="notice" class="notice" hidden></p>
+
+          <div id="state-message" class="state-message">
+            <p id="message" class="message">Menyiapkan kamera…</p>
+            <p id="hint" class="hint"></p>
+          </div>
+
+          <div id="state-progress" class="state-progress" hidden>
+            <div class="ring">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="ring-track" cx="50" cy="50" r="44" />
+                <circle id="ring-value" class="ring-value" cx="50" cy="50" r="44" />
+              </svg>
+              <span id="seconds" class="ring-seconds">6</span>
+            </div>
+            <p class="hint">Mengukur… tahan posisi</p>
+          </div>
+
+          <div id="state-result" class="state-result" hidden>
+            <p class="result-label">Detak Jantung</p>
+            <p class="bpm"><span id="bpm">--</span> <span class="bpm-unit">BPM</span></p>
+            <p id="range" class="range"></p>
+            <p id="quality" class="quality"><span class="dot"></span><span id="quality-text"></span></p>
+            <p id="quality-hint" class="hint"></p>
+          </div>
+
+          <canvas id="waveform" class="waveform" hidden aria-label="Sinyal denyut (BVP)"></canvas>
+          <div id="trend-block" hidden>
+            <p class="small-label">Tren HR sesi</p>
+            <canvas id="trend" class="trend"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="regions">
+        <div class="regions-head">
+          <div>
+            <p class="regions-title">Bobot Region (APRF)</p>
+            <p class="regions-sub">Dari model</p>
+          </div>
+          <p class="face"><span id="face-dot" class="dot"></span><span id="face-text">Tidak ada wajah</span></p>
+        </div>
+        <div class="roi-grid">
+          <figure class="roi">
+            <canvas id="roi-forehead" width="36" height="36"></canvas>
+            <div class="bar"><span id="bar-forehead"></span></div>
+            <figcaption id="label-forehead">Dahi 33%</figcaption>
+          </figure>
+          <figure class="roi">
+            <canvas id="roi-left_cheek" width="36" height="36"></canvas>
+            <div class="bar"><span id="bar-left_cheek"></span></div>
+            <figcaption id="label-left_cheek">Pipi Kiri 33%</figcaption>
+          </figure>
+          <figure class="roi">
+            <canvas id="roi-right_cheek" width="36" height="36"></canvas>
+            <div class="bar"><span id="bar-right_cheek"></span></div>
+            <figcaption id="label-right_cheek">Pipi Kanan 33%</figcaption>
+          </figure>
+        </div>
+        <p id="debug" class="debug"></p>
+        <button id="stop" class="btn-secondary" type="button">Selesai</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="disclaimer">Bukan alat medis. Hasil hanya untuk demonstrasi penelitian.</p>
+      <p class="apk">
+        <a id="apk-link" href="LitePulse.apk" download>Unduh APK Android</a>
+        <span>Android 8.0+ · 64-bit · 24,7 MB</span>
+      </p>
+      <p class="credit">LitePulse · GEMASTIK 2026</p>
+    </footer>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

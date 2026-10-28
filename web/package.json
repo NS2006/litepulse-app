@@ -1,0 +1,12 @@
+{
+  "name": "litepulse-web",
+  "private": true,
+  "type": "module",
+  "description": "LitePulse in the browser. Static site: no build step; package.json only marks js/ as ES modules for the Node verification script.",
+  "scripts": {
+    "verify": "node verify/verify.mjs verify/out"
+  },
+  "devDependencies": {
+    "onnxruntime-web": "1.30.0"
+  }
+}
