@@ -11,4 +11,4 @@ export const ORT_DIST = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERS
 export const MAX_PROCESS_SIDE = 640;
 
 /** Android download: the LitePulse.apk attached to the repository's newest GitHub Release. */
-export const APK_URL = 'https://github.com/OWNER/REPO/releases/latest/download/LitePulse.apk';
+export const APK_URL = 'https://github.com/NS2006/litepulse-app/releases/latest/download/LitePulse.apk';
