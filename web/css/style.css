@@ -66,6 +66,7 @@ body {
 .android-kicker { margin: 0; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
 .android-card h2 { margin: 2px 0 6px; font-size: 21px; line-height: 1.25; }
 .android-text { margin: 0 0 16px; color: var(--text-2); font-size: 15px; }
+.android-text strong { color: var(--text); }
 .btn-download {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   border-radius: 14px; padding: 18px 16px; background: #fff; color: #04121a;
