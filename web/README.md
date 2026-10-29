@@ -1,7 +1,9 @@
-# LitePulse — versi browser
+# LitePulse — demo browser
 
 Halaman statis yang mengukur detak jantung dari kamera depan, sepenuhnya di dalam browser.
-Halaman ini menjalankan pipeline yang sama dengan aplikasi Android:
+Halaman ini adalah demo agar LitePulse mudah dicoba tanpa instalasi; versi utamanya adalah
+aplikasi Android di [`android/`](../android). Halaman menonjolkan tombol unduh aplikasi tersebut
+dan menjalankan pipeline yang sama:
 
 | Tahap | Aplikasi Android | Browser |
 |---|---|---|

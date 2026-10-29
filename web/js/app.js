@@ -10,7 +10,7 @@ const ROI_LABELS = { forehead: 'Dahi', left_cheek: 'Pipi Kiri', right_cheek: 'Pi
 const ROI_COLORS = { forehead: '#4fc3f7', left_cheek: '#ffb74d', right_cheek: '#ba68c8' };
 const RING_LENGTH = 2 * Math.PI * 44;
 
-$('apk-link').href = APK_URL;
+for (const link of document.querySelectorAll('.apk-link')) link.href = APK_URL;
 
 let stream = null;
 let running = false;

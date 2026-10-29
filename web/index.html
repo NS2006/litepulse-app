@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>LitePulse — Detak Jantung dari Wajah</title>
-  <meta name="description" content="Ukur detak jantung dari video wajah langsung di browser dengan model rPPG LitePulse (0,4 MB). Tanpa instalasi, video tidak diunggah.">
+  <meta name="description" content="Demo web LitePulse: ukur detak jantung dari video wajah langsung di browser dengan model rPPG ringan (0,4 MB). Versi utama tersedia sebagai aplikasi Android.">
   <meta name="theme-color" content="#0b0d10">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 17h7l3-8 5 15 4-11 2 4h7' fill='none' stroke='%234FC3F7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
@@ -20,14 +20,29 @@
 
     <!-- Intro -->
     <section id="intro" class="intro">
+      <p class="badge">Versi demo web</p>
       <h1>Ukur detak jantung dari wajah, langsung di browser</h1>
       <p class="lead">
         Model rPPG ringan (0,4 MB) membaca perubahan warna kulit yang sangat kecil
         di dahi dan pipi untuk memperkirakan detak jantung. Tanpa instalasi.
       </p>
 
-      <button id="start" class="btn-primary" type="button">Mulai Pengukuran</button>
+      <button id="start" class="btn-primary" type="button">Coba Demo di Browser</button>
       <p id="load-status" class="load-status" role="status" aria-live="polite"></p>
+
+      <aside class="android-card" aria-labelledby="android-title">
+        <p class="android-kicker">Versi utama</p>
+        <h2 id="android-title">Aplikasi Android LitePulse</h2>
+        <p class="android-text">
+          Website ini hanya demo agar LitePulse mudah dicoba tanpa instalasi.
+          LitePulse dirancang sebagai aplikasi Android yang menjalankan model langsung di ponsel.
+        </p>
+        <a class="btn-download apk-link" href="LitePulse.apk" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" /></svg>
+          Unduh Aplikasi Android
+        </a>
+        <p class="android-meta">APK · Android 8.0+ · 64-bit · 24,7 MB</p>
+      </aside>
 
       <ul class="tips">
         <li><strong>Cahaya terang dan merata</strong> di wajah, hindari lampu dari belakang.</li>
@@ -112,7 +127,8 @@
     <footer class="footer">
       <p class="disclaimer">Bukan alat medis. Hasil hanya untuk demonstrasi penelitian.</p>
       <p class="apk">
-        <a id="apk-link" href="LitePulse.apk" download>Unduh APK Android</a>
+        <span>Versi utama:</span>
+        <a class="apk-link" href="LitePulse.apk" download>Unduh aplikasi Android</a>
         <span>Android 8.0+ · 64-bit · 24,7 MB</span>
       </p>
       <p class="credit">LitePulse · GEMASTIK 2026</p>

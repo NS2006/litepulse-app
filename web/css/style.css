@@ -41,6 +41,10 @@ body {
 .brand-name { font-weight: 700; font-size: 20px; letter-spacing: 0.2px; }
 
 /* ---- intro ---- */
+.badge {
+  display: inline-block; margin: 0 0 4px; padding: 4px 12px; border-radius: 999px;
+  border: 1px solid var(--warn); color: var(--warn); font-size: 13px; font-weight: 600;
+}
 .intro h1 { font-size: clamp(26px, 7vw, 34px); line-height: 1.15; margin: 8px 0 12px; }
 .lead { color: var(--text-2); margin: 0 0 24px; }
 
@@ -54,6 +58,22 @@ body {
 
 .load-status { min-height: 1.5em; color: var(--text-2); font-size: 14px; margin: 10px 0 0; }
 .load-status.error { color: var(--warn); }
+
+.android-card {
+  margin-top: 14px; padding: 18px; border-radius: var(--radius);
+  background: rgba(79, 195, 247, 0.08); border: 1px solid rgba(79, 195, 247, 0.45);
+}
+.android-kicker { margin: 0; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+.android-card h2 { margin: 2px 0 6px; font-size: 21px; line-height: 1.25; }
+.android-text { margin: 0 0 16px; color: var(--text-2); font-size: 15px; }
+.btn-download {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  border-radius: 14px; padding: 18px 16px; background: #fff; color: #04121a;
+  font-size: 19px; font-weight: 800; text-decoration: none;
+}
+.btn-download svg { width: 24px; height: 24px; flex: none; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.btn-download:hover, .btn-download:focus-visible { background: #e3f5fd; }
+.android-meta { margin: 8px 0 0; color: var(--text-3); font-size: 13px; text-align: center; }
 
 .tips { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; }
 .tips li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; color: var(--text-2); font-size: 15px; }
@@ -129,5 +149,7 @@ body {
 .footer p { margin: 0 0 8px; }
 .disclaimer { color: var(--text-2); }
 .apk { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+/* The intro has the big download card; the footer link is for the measuring screen. */
+.intro:not([hidden]) ~ .footer .apk { display: none; }
 .apk a { color: var(--accent); font-weight: 600; text-decoration: none; }
 .apk a:hover, .apk a:focus-visible { text-decoration: underline; }

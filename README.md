@@ -10,9 +10,12 @@ Distillation dan Adaptive ROI Fusion untuk Mengurangi Disparitas Warna Kulit*.
 
 | | |
 |---|---|
-| 🌐 **Coba di browser** | https://ns2006.github.io/litepulse-app/ |
-| 📱 **Aplikasi Android** | [Unduh APK terbaru](https://github.com/NS2006/litepulse-app/releases/latest) |
+| 📱 **Aplikasi Android (versi utama)** | [Unduh APK terbaru](https://github.com/NS2006/litepulse-app/releases/latest) |
+| 🌐 **Demo di browser** | https://ns2006.github.io/litepulse-app/ |
 | 🧪 **Kode pelatihan** | [KevinFu12/LitePulse](https://github.com/KevinFu12/LitePulse) (berbasis rPPG-Toolbox) |
+
+LitePulse dirancang sebagai aplikasi Android. Versi browser menjalankan pipeline yang sama dan
+disediakan sebagai demo agar LitePulse mudah dicoba tanpa instalasi.
 
 > [!NOTE]
 > LitePulse adalah demo penelitian, bukan alat medis. Jangan gunakan hasil pengukurannya untuk
@@ -93,8 +96,8 @@ statistik (p = 0.128).
 
 | Folder | Isi |
 |---|---|
-| [`android/`](android) | Aplikasi Android: Kotlin, Jetpack Compose, CameraX, MediaPipe, PyTorch Lite |
-| [`web/`](web) | Versi browser: MediaPipe web, ONNX Runtime Web, tanpa proses build |
+| [`android/`](android) | Aplikasi Android (versi utama): Kotlin, Jetpack Compose, CameraX, MediaPipe, PyTorch Lite |
+| [`web/`](web) | Demo di browser: MediaPipe web, ONNX Runtime Web, tanpa proses build |
 | [`model/`](model) | Definisi jaringan, checkpoint hasil pelatihan, serta exporter `.ptl` dan `.onnx` |
 | [`.github/workflows/`](.github/workflows) | Memublikasikan `web/` ke GitHub Pages |
 
