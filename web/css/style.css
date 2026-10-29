@@ -78,7 +78,12 @@ body {
 .tips { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; }
 .tips li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; color: var(--text-2); font-size: 15px; }
 .tips strong { color: var(--text); }
-.privacy { color: var(--text-3); font-size: 14px; margin: 16px 0 0; }
+.privacy {
+  display: flex; align-items: center; gap: 10px; margin: -8px 0 20px; padding: 12px 14px;
+  border-radius: 14px; background: rgba(76, 175, 80, 0.12); border: 1px solid rgba(76, 175, 80, 0.5);
+  color: var(--text); font-size: 15px; font-weight: 600;
+}
+.privacy svg { width: 22px; height: 22px; flex: none; fill: none; stroke: var(--good); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---- measurement ---- */
 .camera {
@@ -147,7 +152,6 @@ body {
 /* ---- footer ---- */
 .footer { margin-top: 32px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--text-3); font-size: 13px; }
 .footer p { margin: 0 0 8px; }
-.disclaimer { color: var(--text-2); }
 .apk { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
 /* The intro has the big download card; the footer link is for the measuring screen. */
 .intro:not([hidden]) ~ .footer .apk { display: none; }
